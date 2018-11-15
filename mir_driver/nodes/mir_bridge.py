@@ -47,7 +47,7 @@ def _move_base_result_dict_filter(msg_dict):
 def _tf_dict_filter(msg_dict):
     filtered_msg_dict = copy.deepcopy(msg_dict)
     for transform in filtered_msg_dict['transforms']:
-        transform['child_frame_id'] = tf_prefix + '/' + transform['child_frame_id'].strip('/')
+        transform['child_frame_id'] = tf_prefix + transform['child_frame_id'].strip('/')
     return filtered_msg_dict
 
 def _prepend_tf_prefix_dict_filter(msg_dict):
@@ -61,7 +61,7 @@ def _prepend_tf_prefix_dict_filter(msg_dict):
                 frame_id = value['frame_id'].strip('/')
                 if (frame_id != 'map'):
                     # prepend tf_prefix, then remove leading '/' (e.g., when tf_prefix is empty)
-                    value['frame_id'] = (tf_prefix + '/' + frame_id).strip('/')
+                    value['frame_id'] = (tf_prefix + frame_id).strip('/')
                 else:
                     value['frame_id'] = frame_id
 
