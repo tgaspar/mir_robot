@@ -14,20 +14,25 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
     Encoders.msg
+    Error.msg
     ExternalRobot.msg
     ExternalRobots.msg
+    HookStatus.msg
     LocalMapStat.msg
     MirExtra.msg
-    MirStatus.msg
     MissionCtrlCommand.msg
     MissionCtrlState.msg
     Path.msg
     Pose2D.msg
     RobotMode.msg
     RobotState.msg
+    RobotStatus.msg
     Serial.msg
     StampedEncoders.msg
     Trolley.msg
+    Twist2D.msg
+    UserPrompt.msg
+    WebPath.msg
 )
 
 # Generate added messages and services with any dependencies listed here
